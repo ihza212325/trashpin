@@ -4,10 +4,7 @@
 
 **Report Maps** adalah aplikasi mobile berbasis React Native/Expo yang memungkinkan pengguna untuk membuat dan melihat laporan lokasi pada peta interaktif. Aplikasi ini menggunakan MapLibre untuk menampilkan peta dengan dukungan tema gelap dan terang, serta fitur autentikasi lengkap untuk manajemen pengguna.
 
-<video width="320" height="240" controls>
-  <source src="video_trashpin.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Watch the video](https://img.youtube.com/vi/Q3SvXT2QD9o/maxresdefault.jpg)](https://youtu.be/Q3SvXT2QD9o)
 
 ## 🎯 Fitur Utama
 
