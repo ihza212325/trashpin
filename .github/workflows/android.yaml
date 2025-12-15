@@ -22,5 +22,5 @@ jobs:
         with:
           api-key: ${{ secrets.MAESTRO_API_KEY }}
           # note that you can supply the project id any way you like, it is not secret
-          project-id: ${{ com.browncat2123.reportmaps }}
+          project-id: com.browncat2123.reportmaps
           app-file: app/build/outputs/apk/debug/app-debug.apk
