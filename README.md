@@ -1,57 +1,57 @@
-# Report Maps - Aplikasi Ringkasan
+# Report Maps - Application Summary
 
-## 📱 Deskripsi Aplikasi
+## 📱 Application Description
 
-**Report Maps** adalah aplikasi mobile berbasis React Native/Expo yang memungkinkan pengguna untuk membuat dan melihat laporan lokasi pada peta interaktif. Aplikasi ini menggunakan MapLibre untuk menampilkan peta dengan dukungan tema gelap dan terang, serta fitur autentikasi lengkap untuk manajemen pengguna.
+**Report Maps** is a mobile application based on React Native/Expo that allows users to create and view location reports on an interactive map. The application uses MapLibre to display maps with dark and light theme support, as well as complete authentication features for user management.
 
 [![Watch the video](https://img.youtube.com/vi/Q3SvXT2QD9o/maxresdefault.jpg)](https://youtu.be/Q3SvXT2QD9o)
 
-## 🎯 Fitur Utama
+## 🎯 Main Features
 
-### 1. **Autentikasi & Manajemen Pengguna**
+### 1. **Authentication & User Management**
 
-- Login dengan username dan password
-- Registrasi pengguna baru (signup)
+- Login with username and password
+- New user registration (signup)
 - Social media login (UI ready)
-- Manajemen profil pengguna
-- Edit profil dengan foto
+- User profile management
+- Edit profile with photo
 - Logout
-- Token-based authentication dengan refresh token
-- Secure storage untuk token menggunakan Expo SecureStore
+- Token-based authentication with refresh token
+- Secure storage for tokens using Expo SecureStore
 
-### 2. **Peta Interaktif**
+### 2. **Interactive Map**
 
-- Peta interaktif menggunakan MapLibre
-- Dukungan tema gelap dan terang
-- Marker/lokasi laporan di peta
-- Animasi kamera saat navigasi ke marker
-- Current location tracking (dengan permission)
+- Interactive map using MapLibre
+- Dark and light theme support
+- Markers/report locations on the map
+- Camera animation when navigating to marker
+- Current location tracking (with permission)
 - Custom map styles (light & dark)
 
-### 3. **Manajemen Laporan**
+### 3. **Report Management**
 
-- Buat laporan baru dengan koordinat GPS
-- Tambahkan foto ke laporan
-- Lihat detail laporan dalam bottom sheet
-- Filter laporan (semua laporan / hanya laporan user)
-- Pencarian laporan berdasarkan judul dan deskripsi
-- Statistik laporan (total & laporan user)
-- Hapus laporan
+- Create new report with GPS coordinates
+- Add photos to reports
+- View report details in bottom sheet
+- Filter reports (all reports / user reports only)
+- Search reports by title and description
+- Report statistics (total & user reports)
+- Delete reports
 
 ### 4. **UI/UX Features**
 
-- Dark/Light theme dengan system preference
-- Bottom sheet untuk detail marker
-- Toast notifications untuk feedback
+- Dark/Light theme with system preference
+- Bottom sheet for marker details
+- Toast notifications for feedback
 - Loading modals
 - Confirmation modals
 - Haptic feedback
-- Animasi dengan Reanimated
+- Animations with Reanimated
 - Parallax scroll view
-- Search bar dengan clear button
-- Floating Action Button (FAB) untuk create report
+- Search bar with clear button
+- Floating Action Button (FAB) for creating reports
 
-## 🛠️ Teknologi & Dependencies
+## 🛠️ Technology & Dependencies
 
 ### Core Framework
 
@@ -62,22 +62,22 @@
 
 ### State Management
 
-- **Zustand** ^5.0.9 - untuk state management lokal (reports store)
-- **TanStack React Query** ^5.90.12 - untuk server state management
+- **Zustand** ^5.0.9 - for local state management (reports store)
+- **TanStack React Query** ^5.90.12 - for server state management
 
 ### Maps & Location
 
-- **@maplibre/maplibre-react-native** ^10.4.2 - peta interaktif
-- **expo-location** ~19.0.8 - akses lokasi GPS
+- **@maplibre/maplibre-react-native** ^10.4.2 - interactive map
+- **expo-location** ~19.0.8 - GPS location access
 
 ### UI Components
 
 - **@gorhom/bottom-sheet** ^5.2.8 - bottom sheet modal
 - **expo-haptics** ~15.0.8 - haptic feedback
-- **expo-image** ~3.0.11 - optimasi gambar
-- **expo-image-picker** ~17.0.9 - picker foto
+- **expo-image** ~3.0.11 - image optimization
+- **expo-image-picker** ~17.0.9 - photo picker
 - **expo-linear-gradient** ~15.0.8 - gradient backgrounds
-- **react-native-reanimated** ~4.1.1 - animasi
+- **react-native-reanimated** ~4.1.1 - animations
 - **react-native-gesture-handler** ~2.28.0 - gesture handling
 
 ### Storage & Security
@@ -88,19 +88,19 @@
 ### Networking
 
 - **axios** ^1.13.2 - HTTP client
-- **DummyJSON API** - backend API untuk autentikasi
+- **DummyJSON API** - backend API for authentication
 
 ### Navigation
 
 - **@react-navigation/native** ^7.1.8
 - **@react-navigation/bottom-tabs** ^7.4.0
 
-## 📁 Struktur Project
+## 📁 Project Structure
 
 ```
 report-maps/
 ├── app/                          # Expo Router pages
-│   ├── _layout.tsx              # Root layout dengan providers
+│   ├── _layout.tsx              # Root layout with providers
 │   ├── index.tsx                # Entry point (auth check & redirect)
 │   ├── login/                   # Authentication screens
 │   │   ├── _layout.tsx
@@ -135,13 +135,13 @@ report-maps/
 │
 ├── lib/                         # Core business logic
 │   ├── api/                     # API services
-│   │   ├── client.ts           # Axios instance dengan interceptors
+│   │   ├── client.ts           # Axios instance with interceptors
 │   │   ├── auth.service.ts     # Authentication service
 │   │   ├── user.service.ts     # User service
 │   │   ├── types.ts            # TypeScript types
 │   │   └── index.ts
 │   ├── hooks/                   # Custom hooks
-│   │   └── use-auth.ts         # Auth hooks dengan React Query
+│   │   └── use-auth.ts         # Auth hooks with React Query
 │   ├── providers/              # Context providers
 │   │   └── query-provider.tsx  # React Query provider
 │   └── stores/                  # Zustand stores
@@ -170,7 +170,7 @@ report-maps/
     └── reset-project.js
 ```
 
-## 🔐 Autentikasi
+## 🔐 Authentication
 
 ### Test Credentials
 
@@ -188,11 +188,11 @@ Password: emilyspass
 
 ### Token Management
 
-- Access token dan refresh token disimpan di Expo SecureStore
-- Automatic token injection ke request headers via Axios interceptor
-- Auto logout saat token expired (401 response)
+- Access token and refresh token stored in Expo SecureStore
+- Automatic token injection to request headers via Axios interceptor
+- Auto logout when token expires (401 response)
 
-## 🗺️ Fitur Peta
+## 🗺️ Map Features
 
 ### Marker Data Structure
 
@@ -210,28 +210,28 @@ interface MarkerData {
 
 - Default center: Jakarta (106.8456, -6.2088)
 - Zoom level: 10 (city view) / 15 (detail view)
-- Camera animation saat marker dipilih
-- Custom map styles untuk light & dark mode
-- Point annotations untuk markers
+- Camera animation when marker is selected
+- Custom map styles for light & dark mode
+- Point annotations for markers
 
 ## 🎨 Theme System
 
-Aplikasi mendukung 3 mode tema:
+The application supports 3 theme modes:
 
-- **Light** - Tema terang
-- **Dark** - Tema gelap
-- **System** - Mengikuti preferensi sistem
+- **Light** - Light theme
+- **Dark** - Dark theme
+- **System** - Follows system preference
 
-Theme preference disimpan di AsyncStorage dan persist across app restarts.
+Theme preference is stored in AsyncStorage and persists across app restarts.
 
 ## 📊 State Management
 
 ### Zustand Store (Reports)
 
-- `userReports`: Array laporan yang dibuat user
-- `addReport()`: Tambah laporan baru
-- `removeReport()`: Hapus laporan
-- `clearReports()`: Clear semua laporan
+- `userReports`: Array of reports created by user
+- `addReport()`: Add new report
+- `removeReport()`: Remove report
+- `clearReports()`: Clear all reports
 
 ### React Query (Server State)
 
@@ -265,7 +265,7 @@ npm run reset-project
 - ✅ Android (edge-to-edge enabled)
 - ✅ Web (static output)
 
-## 🔧 Konfigurasi
+## 🔧 Configuration
 
 ### App Configuration (`app.json`)
 
@@ -281,28 +281,28 @@ npm run reset-project
 - Camera
 - Photo library
 
-## 📝 Catatan Pengembangan
+## 📝 Development Notes
 
-1. **DummyJSON API**: API ini adalah mock API, user yang didaftarkan via signup tidak bisa langsung login. Gunakan test credentials untuk login.
+1. **DummyJSON API**: This API is a mock API, users registered via signup cannot login immediately. Use test credentials to login.
 
-2. **Marker Data**: Sample markers disimpan di `assets/data/markers.json`. User reports disimpan di Zustand store (in-memory, tidak persist).
+2. **Marker Data**: Sample markers are stored in `assets/data/markers.json`. User reports are stored in Zustand store (in-memory, not persisted).
 
-3. **Map Styles**: Custom map styles disimpan di `assets/mapstyle/` dengan format JSON.
+3. **Map Styles**: Custom map styles are stored in `assets/mapstyle/` in JSON format.
 
-4. **Type Safety**: Aplikasi menggunakan TypeScript dengan strict typing untuk semua API calls dan components.
+4. **Type Safety**: The application uses TypeScript with strict typing for all API calls and components.
 
-5. **Error Handling**: Semua API calls memiliki error handling dengan toast notifications untuk user feedback.
+5. **Error Handling**: All API calls have error handling with toast notifications for user feedback.
 
-## 🔄 Alur Aplikasi
+## 🔄 Application Flow
 
 1. **App Launch** → Check authentication status
-2. **Not Authenticated** → Redirect ke `/login`
-3. **Authenticated** → Redirect ke `/home`
-4. **Home Screen** → Tampilkan peta dengan markers
-5. **Create Report** → FAB → Form → Tambah marker ke peta
-6. **View Report** → Tap marker → Bottom sheet dengan detail
+2. **Not Authenticated** → Redirect to `/login`
+3. **Authenticated** → Redirect to `/home`
+4. **Home Screen** → Display map with markers
+5. **Create Report** → FAB → Form → Add marker to map
+6. **View Report** → Tap marker → Bottom sheet with details
 7. **Profile** → Edit profile, logout
 
 ---
 
-**Dibuat dengan ❤️ menggunakan Expo & React Native**
+**Made with ❤️ using Expo & React Native**

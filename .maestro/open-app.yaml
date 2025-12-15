@@ -1,0 +1,5 @@
+appId: com.browncat2123.reportmaps
+---
+- launchApp:
+    clearState: true
+- tapOn: Login
