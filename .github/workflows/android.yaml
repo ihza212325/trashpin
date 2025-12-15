@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Test Maestro API Key
         run: |
-         echo "${{ secrets.MAESTRO_API_KEY.MAESTRO_API_KEY }}"
+         echo "${{ secrets.MAESTRO_API_KEY }}"
       # 1. Checkout source code
       # - name: Checkout repository
       #   uses: actions/checkout@v3
